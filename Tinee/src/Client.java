@@ -153,18 +153,25 @@ public class Client {
         throw new IOException("Input stream closed while reading.");
       }
       // Trim leading/trailing white space, and split words according to spaces
-      List<String> split = Arrays.stream(raw.trim().split("\\ "))
-          .map(x -> x.trim()).collect(Collectors.toList());
+      List<String> split = Arrays.stream(raw.trim().split("\\ ")).map(x -> x.trim()).collect(Collectors.toList());
+      
+      
+      System.out.println("here: " + split);
+      //System.out.println("split: " + Arrays.toString(raw.split("\\ ")));
+      
       String cmd = split.remove(0);  // First word is the command keyword
       String[] rawArgs = split.toArray(new String[split.size()]);
+      
+      //System.out.println("cmd: " + cmd);
+      //System.out.println("rawArgs: " + Arrays.toString(rawArgs));
       // Remainder, if any, are arguments
 
       // Process user input
       if ("exit".startsWith(cmd)) {
         // exit command applies in either state
-        //done = true;
-        ExitCommand request = new ExitCommand();
-        request.execute();
+        done = true;
+        //ExitCommand request = new ExitCommand();
+        //request.execute();
       } // "Main" state commands
       else if (state.equals("Main")) {
         if ("manage".startsWith(cmd)) {
