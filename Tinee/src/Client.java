@@ -166,13 +166,19 @@ public class Client {
       // Process user input
       if ("exit".startsWith(cmd)) {
         // exit command applies in either state
-        done = true;
+        //done = true;
+        ExitCommand request = new ExitCommand();
+        request.execute();
       } // "Main" state commands
       else if (state.equals("Main")) {
         if ("manage".startsWith(cmd)) {
           // Switch to "Drafting" state and start a new "draft"
           state = "Drafting";
           draftTag = rawArgs[0];
+          
+          ManageCommand request = new ManageCommand(rawArgs[0]);
+          request.execute();
+          
         } else if ("read".startsWith(cmd)) {
           // Read tines on server
           helper.chan.send(new ReadRequest(rawArgs[0]));
@@ -204,3 +210,4 @@ public class Client {
     return;
   }
 }
+
