@@ -38,13 +38,8 @@ public class CLFormatter {
     return strings.getString("formatMainMenuPrompt");
   }
 
-  static String formatDraftingMenuPrompt(String tag, List<String> lines) {
-    return "\nDrafting: " + formatDrafting(tag, lines)
-        + "\n[Drafting] Enter command: "
-        + "line [mytext], "
-        + "push, "
-        + "exit"
-        + "\n> ";
+  static String formatDraftingMenuPrompt(String tag, List<String> lines, ResourceBundle strings) {
+    return printLn(strings.getString("formatDraftingMenuPrompt"), formatDrafting(tag, lines)); 
   }
 
   static String formatDrafting(String tag, List<String> lines) {

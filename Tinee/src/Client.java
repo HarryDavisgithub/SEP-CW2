@@ -85,7 +85,7 @@ public class Client {
       this.user = user;
       this.host = host;
       this.port = port; 
-      strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
+      strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("fr", "FR"));
   }
 
   public static void main(String[] args) throws IOException {
@@ -150,7 +150,7 @@ public class Client {
         System.out.print(helper.formatMainMenuPrompt(strings));
       } else {  // state = "Drafting"
         System.out.print(helper.
-            formatDraftingMenuPrompt(draftTag, draftLines));
+            formatDraftingMenuPrompt(draftTag, draftLines, strings));
       }
 
       // Read a line of user input
