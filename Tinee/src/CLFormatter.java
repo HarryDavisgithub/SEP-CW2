@@ -74,5 +74,7 @@ public class CLFormatter {
       return MessageFormat.format(message, args);
   }
   
+  static 
+  
 }
 
