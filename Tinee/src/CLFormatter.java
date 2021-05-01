@@ -1,7 +1,9 @@
 
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ResourceBundle;
 import sep.tinee.net.channel.ClientChannel;
 import sep.tinee.net.message.Message;
 
@@ -29,18 +31,11 @@ public class CLFormatter {
 
   /* Following are the auxiliary methods for formatting the UI text */
 
-  static String formatSplash(String user) {
-    return "\nHello " + user + "!\n"
-        + "Note:  Commands can be abbreviated to any prefix, "
-        + "e.g., read [mytag] => re [mytag]\n";
+  static String formatSplash(String user, ResourceBundle strings) {
+    return printLn(strings.getString("formatSplash"), user); 
   }
-
-  static String formatMainMenuPrompt() {
-    return "\n[Main] Enter command: "
-        + "read [mytag], "
-        + "manage [mytag], "
-        + "exit"
-        + "\n> ";
+  static String formatMainMenuPrompt(ResourceBundle strings) {
+    return strings.getString("formatMainMenuPrompt");
   }
 
   static String formatDraftingMenuPrompt(String tag, List<String> lines) {
@@ -79,4 +74,10 @@ public class CLFormatter {
     b.append("\n");
     return b.toString();
   }
+  
+  static String printLn(String message, Object... args) {
+      return MessageFormat.format(message, args);
+  }
+  
 }
+

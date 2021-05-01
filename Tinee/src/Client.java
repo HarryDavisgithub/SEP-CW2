@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import sep.tinee.net.message.Bye;
 import sep.tinee.net.message.Push;
@@ -74,6 +76,8 @@ public class Client {
   String user;
   String host;
   int port;
+  private final ResourceBundle strings;
+  private static final String RESOURCE_PATH = "resources/MessageBundle";
 
   boolean printSplash = true;
 
@@ -81,6 +85,7 @@ public class Client {
       this.user = user;
       this.host = host;
       this.port = port; 
+      strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
   }
 
   public static void main(String[] args) throws IOException {
@@ -88,6 +93,7 @@ public class Client {
     String host = args[1];
     int port = Integer.parseInt(args[2]);
     Client client = new Client(user, host, port);
+    
     client.run();
   }
 
@@ -110,7 +116,7 @@ public class Client {
 
       if (this.printSplash = true);
       {
-        System.out.print(helper.formatSplash(this.user));
+        System.out.print(helper.formatSplash(this.user, strings));
       }
       loop(helper, reader);
     } catch (Exception ex) {
@@ -141,7 +147,7 @@ public class Client {
 
       // Print user options
       if (state.equals("Main")) {
-        System.out.print(helper.formatMainMenuPrompt());
+        System.out.print(helper.formatMainMenuPrompt(strings));
       } else {  // state = "Drafting"
         System.out.print(helper.
             formatDraftingMenuPrompt(draftTag, draftLines));
