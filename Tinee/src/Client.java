@@ -153,8 +153,8 @@ public class Client {
         throw new IOException("Input stream closed while reading.");
       }
       // Trim leading/trailing white space, and split words according to spaces
-      //List<String> split = Arrays.stream(raw.trim().split("\\ ")).map(x -> x.trim()).collect(Collectors.toList());
-      List<String> split = Arrays.stream(raw.split(" ", 2)).collect(Collectors.toList());
+      List<String> split = Arrays.stream(raw.trim().split(" ", 2)).map(x -> x.trim()).collect(Collectors.toList());
+      //List<String> split = Arrays.stream(raw.split(" ", 2)).collect(Collectors.toList());
       
       String cmd = split.remove(0);  // First word is the command keyword
       String[] rawArgs = split.toArray(new String[split.size()]);
