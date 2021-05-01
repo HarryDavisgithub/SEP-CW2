@@ -109,7 +109,7 @@ public class Client {
       reader = new BufferedReader(new InputStreamReader(System.in));
 
       if (this.user.isEmpty() || this.host.isEmpty()) {
-        System.err.println("User/host has not been set.");
+        System.err.println(strings.getString("NoUser"));
         System.exit(1);
       }
       helper = new CLFormatter(this.host, this.port);
@@ -156,7 +156,7 @@ public class Client {
       // Read a line of user input
       String raw = reader.readLine();
       if (raw == null) {
-        throw new IOException("Input stream closed while reading.");
+        throw new IOException(strings.getString("InputClosed"));
       }
       // Trim leading/trailing white space, and split words according to spaces
       List<String> split = Arrays.stream(raw.trim().split("\\ "))
@@ -188,7 +188,7 @@ public class Client {
           System.out.print(
               helper.formatRead(rawArgs[0], rep.users, rep.lines));
         } else {
-          System.out.println("Could not parse command/args.");
+          System.out.println(strings.getString("ParseArgsMsg"));
         }
       } // "Drafting" state commands
       else if (state.equals("Drafting")) {
@@ -204,10 +204,10 @@ public class Client {
           draftTag = null;
           draftLines.clear();
         } else {
-          System.out.println("Could not parse command/args.");
+          System.out.println(strings.getString("ParseArgsMsg"));
         }
       } else {
-        System.out.println("Could not parse command/args.");
+        System.out.println(strings.getString("ParseArgsMsg"));
       }
     }
     return;
