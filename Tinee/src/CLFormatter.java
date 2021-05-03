@@ -31,17 +31,6 @@ public class CLFormatter {
 
   /* Following are the auxiliary methods for formatting the UI text */
 
-  static String formatSplash(String user, ResourceBundle strings) {
-    return printLn(strings.getString("formatSplash"), user); 
-  }
-  static String formatMainMenuPrompt(ResourceBundle strings) {
-    return strings.getString("formatMainMenuPrompt");
-  }
-
-  static String formatDraftingMenuPrompt(String tag, List<String> lines, ResourceBundle strings) {
-    return printLn(strings.getString("formatDraftingMenuPrompt"), formatDrafting(tag, lines)); 
-  }
-
   static String formatDrafting(String tag, List<String> lines) {
     StringBuilder b = new StringBuilder("#");
     b.append(tag);
@@ -70,11 +59,9 @@ public class CLFormatter {
     return b.toString();
   }
   
-  static String printLn(String message, Object... args) {
-      return MessageFormat.format(message, args);
-  }
   
-  static 
+  
+  
   
 }
 

@@ -76,8 +76,8 @@ public class Client {
   String user;
   String host;
   int port;
-  private final ResourceBundle strings;
-  private static final String RESOURCE_PATH = "resources/MessageBundle";
+  private static LangManager langMan = new LangManager();
+  
 
   boolean printSplash = true;
 
@@ -85,16 +85,26 @@ public class Client {
       this.user = user;
       this.host = host;
       this.port = port; 
-      strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("fr", "FR"));
+      
+      
   }
 
   public static void main(String[] args) throws IOException {
     String user = args[0];
     String host = args[1];
-    int port = Integer.parseInt(args[2]);
-    Client client = new Client(user, host, port);
+    try{
+        int port = Integer.parseInt(args[2]);
+        Client client = new Client(user, host, port);
+        client.run();
+    }
+    catch(Exception e){
+        //System.err.println(langMan.noUser());
+        throw new IllegalArgumentException(langMan.noUser());
+    }
     
-    client.run();
+    
+    
+    
   }
 
   // Run the client
@@ -105,18 +115,20 @@ public class Client {
 
     BufferedReader reader = null;
     CLFormatter helper = null;
+    
     try {
       reader = new BufferedReader(new InputStreamReader(System.in));
 
       if (this.user.isEmpty() || this.host.isEmpty()) {
-        System.err.println(strings.getString("NoUser"));
+        System.err.println(langMan.noUser());
         System.exit(1);
       }
       helper = new CLFormatter(this.host, this.port);
-
+      
+      
       if (this.printSplash = true);
       {
-        System.out.print(helper.formatSplash(this.user, strings));
+        System.out.print(langMan.formatSplash(this.user));
       }
       loop(helper, reader);
     } catch (Exception ex) {
@@ -147,16 +159,16 @@ public class Client {
 
       // Print user options
       if (state.equals("Main")) {
-        System.out.print(helper.formatMainMenuPrompt(strings));
+        System.out.print(langMan.formatMainMenuPrompt());
       } else {  // state = "Drafting"
-        System.out.print(helper.
-            formatDraftingMenuPrompt(draftTag, draftLines, strings));
+        System.out.print(langMan.
+            formatDraftingMenuPrompt(draftTag, draftLines, helper));
       }
 
       // Read a line of user input
       String raw = reader.readLine();
       if (raw == null) {
-        throw new IOException(strings.getString("InputClosed"));
+        throw new IOException(langMan.inputClosed());
       }
       // Trim leading/trailing white space, and split words according to spaces
       List<String> split = Arrays.stream(raw.trim().split("\\ "))
@@ -168,9 +180,9 @@ public class Client {
       // Process user input
       if ("exit".startsWith(cmd)) {
         // exit command applies in either state
-        //done = true;
-        ExitCommand request = new ExitCommand();
-        request.execute();
+        done = true;
+        //ExitCommand request = new ExitCommand();
+        //request.execute();
       } // "Main" state commands
       else if (state.equals("Main")) {
         if ("manage".startsWith(cmd)) {
@@ -188,7 +200,7 @@ public class Client {
           System.out.print(
               helper.formatRead(rawArgs[0], rep.users, rep.lines));
         } else {
-          System.out.println(strings.getString("ParseArgsMsg"));
+          System.out.println(langMan.parseArgsMsg());
         }
       } // "Drafting" state commands
       else if (state.equals("Drafting")) {
@@ -204,10 +216,10 @@ public class Client {
           draftTag = null;
           draftLines.clear();
         } else {
-          System.out.println(strings.getString("ParseArgsMsg"));
+          System.out.println(langMan.parseArgsMsg());
         }
       } else {
-        System.out.println(strings.getString("ParseArgsMsg"));
+        System.out.println(langMan.parseArgsMsg());
       }
     }
     return;

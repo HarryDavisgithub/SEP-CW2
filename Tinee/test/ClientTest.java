@@ -8,12 +8,14 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Rule;
 
 /**
  *
@@ -83,5 +85,12 @@ public class ClientTest {
       
         assertFalse("Lines are carried over in drafting, new tags will have all previous lines from other tags pushed", output.contains("test2\n" +
 "           1  testline")); //tests to see if the console output contains the correct data (it should be empty))
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testNoUser() throws Exception {
+       String[] args = {" ", "localhost", "8888"};
+       Client.main(args); 
+   
     }
 }
