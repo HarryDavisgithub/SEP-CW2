@@ -3,9 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/Client.java</file>
             <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/CLFormatter.java</file>
             <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/resources/MessageBundle_en_GB.properties</file>
+=======
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/ReadCommand.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/ManageCommand.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/Client.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/Command.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/test/ClientTest.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/sep/mvc/AbstractModel.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/ExitCommand.java</file>
+            <file>file:/C:/Users/harry/Desktop/SEP/CW2/Tinee/src/sep/tinee/server/Server.java</file>
+>>>>>>> harry-whiteSpaceBug
         </group>
     </open-files>
 </project-private>
