@@ -114,13 +114,11 @@ public class Client {
     
     try {
       
-
       if (this.user.isEmpty() || this.host.isEmpty()) {
         System.err.println(langMan.noUser());
         done = true;
       }
       helper = new CLFormatter(this.host, this.port);
-      
       
       if (this.printSplash)
       {
@@ -128,7 +126,7 @@ public class Client {
       }
       loop(helper, reader);
     } catch (IOException | ClassNotFoundException ex) {
-      throw new RuntimeException(ex);
+        System.err.println(ex);
     } finally {
       reader.close();
       if (helper.chan.isOpen()) {
