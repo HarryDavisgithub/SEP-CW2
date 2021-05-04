@@ -75,20 +75,17 @@ import sep.tinee.net.message.ReadRequest;
  */
 public class Client {
 
-  String user;
-  String host;
-  int port;
+  private final String user;
+  private final String host;
+  private final int port;
+  private boolean done = false;
   private static LangManager langMan = new LangManager();
-  
+  private boolean printSplash = true;
 
-  boolean printSplash = true;
-
-  Client(String user, String host, int port) {
+  public Client(String user, String host, int port) {
       this.user = user;
       this.host = host;
       this.port = port; 
-      
-      
   }
 
   public static void main(String[] args) throws IOException {
@@ -103,10 +100,6 @@ public class Client {
         //System.err.println(langMan.noUser());
         throw new IllegalArgumentException(langMan.noUser());
     }
-    
-    
-    
-    
   }
 
   // Run the client
@@ -117,23 +110,24 @@ public class Client {
 
     BufferedReader reader = null;
     CLFormatter helper = null;
+    reader = new BufferedReader(new InputStreamReader(System.in));
     
     try {
-      reader = new BufferedReader(new InputStreamReader(System.in));
+      
 
       if (this.user.isEmpty() || this.host.isEmpty()) {
         System.err.println(langMan.noUser());
-        System.exit(1);
+        done = true;
       }
       helper = new CLFormatter(this.host, this.port);
       
       
-      if (this.printSplash == true);
+      if (this.printSplash)
       {
         System.out.print(langMan.formatSplash(this.user));
       }
       loop(helper, reader);
-    } catch (Exception ex) {
+    } catch (IOException | ClassNotFoundException ex) {
       throw new RuntimeException(ex);
     } finally {
       reader.close();
@@ -157,10 +151,10 @@ public class Client {
     List<String> draftLines = new LinkedList<>();
 
     // The loop
-    for (boolean done = false; !done;) {
+    while(done) {
 
       // Print user options
-      if (state.equals("Main")) {
+      if ("Main".equals(state)) {
         System.out.print(langMan.formatMainMenuPrompt());
       } else {  // state = "Drafting"
         System.out.print(langMan.
@@ -184,10 +178,9 @@ public class Client {
       if (langMan.exit().startsWith(cmd)) {
         // exit command applies in either state
         done = true;
-        //ExitCommand request = new ExitCommand();
-        //request.execute();
+
       } // "Main" state commands
-      else if (state.equals("Main")) {
+      else if ("Main".equals(state)) {
         if (langMan.manage().startsWith(cmd)) {
           // Switch to "Drafting" state and start a new "draft"
           state = "Drafting";
@@ -202,7 +195,7 @@ public class Client {
           System.out.println(langMan.parseArgsMsg());
         }
       } // "Drafting" state commands
-      else if (state.equals("Drafting")) {
+      else if ("Drafting".equals(state)) {
         if (langMan.line().startsWith(cmd)) {
           // Add a tine message line
           String line = Arrays.stream(rawArgs).
@@ -221,7 +214,7 @@ public class Client {
         System.out.println(langMan.parseArgsMsg());
       }
     }
-    return;
+    
   }
 }
 
