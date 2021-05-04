@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import clientPackage.Client;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -91,6 +92,5 @@ public class ClientTest {
     public void testNoUser() throws Exception {
        String[] args = {" ", "localhost", "8888"};
        Client.main(args); 
-   
     }
 }
