@@ -50,5 +50,24 @@ public class LangManager {
   public String parseArgsMsg(){
     return strings.getString("ParseArgsMsg");
   }
-
+  
+  public String manage(){
+      return strings.getString("Manage");
+  }
+  
+  public String read(){
+      return strings.getString("Read");
+  }
+  
+  public String line(){
+      return strings.getString("Line");
+  }
+  
+  public String exit(){
+      return strings.getString("Exit");
+  }
+  
+  public String push(){
+      return strings.getString("Push");
+  }
 }

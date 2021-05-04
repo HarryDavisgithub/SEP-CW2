@@ -181,22 +181,18 @@ public class Client {
       // Remainder, if any, are arguments
 
       // Process user input
-      if ("exit".startsWith(cmd)) {
+      if (langMan.exit().startsWith(cmd)) {
         // exit command applies in either state
         done = true;
         //ExitCommand request = new ExitCommand();
         //request.execute();
       } // "Main" state commands
       else if (state.equals("Main")) {
-        if ("manage".startsWith(cmd)) {
+        if (langMan.manage().startsWith(cmd)) {
           // Switch to "Drafting" state and start a new "draft"
           state = "Drafting";
           draftTag = rawArgs[0];
-          
-          ManageCommand request = new ManageCommand(rawArgs[0]);
-          request.execute();
-          
-        } else if ("read".startsWith(cmd)) {
+        } else if (langMan.read().startsWith(cmd)) {
           // Read tines on server
           helper.chan.send(new ReadRequest(rawArgs[0]));
           ReadReply rep = (ReadReply) helper.chan.receive();
@@ -207,12 +203,12 @@ public class Client {
         }
       } // "Drafting" state commands
       else if (state.equals("Drafting")) {
-        if ("line".startsWith(cmd)) {
+        if (langMan.line().startsWith(cmd)) {
           // Add a tine message line
           String line = Arrays.stream(rawArgs).
               collect(Collectors.joining());
           draftLines.add(line);
-        } else if ("push".startsWith(cmd)) {
+        } else if (langMan.push().startsWith(cmd)) {
           // Send drafted tines to the server, and go back to "Main" state
           helper.chan.send(new Push(user, draftTag, draftLines));
           state = "Main";
