@@ -78,7 +78,7 @@ public class Client {
   private final String user;
   private final String host;
   private final int port;
-  private boolean done = false;
+  private boolean done = true;
   private static LangManager langMan = new LangManager();
   private boolean printSplash = true;
 
@@ -116,7 +116,7 @@ public class Client {
       
       if (this.user.isEmpty() || this.host.isEmpty()) {
         System.err.println(langMan.noUser());
-        done = true;
+        done = false;
       }
       helper = new CLFormatter(this.host, this.port);
       
@@ -175,7 +175,7 @@ public class Client {
       // Process user input
       if (langMan.exit().startsWith(cmd)) {
         // exit command applies in either state
-        done = true;
+        done = false;
 
       } // "Main" state commands
       else if ("Main".equals(state)) {

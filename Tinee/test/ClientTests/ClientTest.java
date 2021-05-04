@@ -1,3 +1,7 @@
+package ClientTests;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -90,7 +94,29 @@ public class ClientTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void testNoUser() throws Exception {
-       String[] args = {" ", "localhost", "8888"};
+       String[] args = {"localhost", "8888"};
+       String input = "exit";
+       ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes("UTF8")); 
+       System.setIn(in);
+       
        Client.main(args); 
+    }
+    
+    @Test
+    public void testRead() throws Exception{
+       String[] args = {"userid", "localhost", "8888"};
+       String input = "read hi\nexit";
+       
+       ByteArrayOutputStream out = new ByteArrayOutputStream();
+       System.setOut(new PrintStream(out, true, "UTF8"));
+        
+       ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes("UTF8")); 
+       System.setIn(in);
+       
+       Client.main(args); 
+
+       String output = out.toString("UTF8"); 
+        
+       assertTrue("Read should", output.contains("Read: #hi"));
     }
 }

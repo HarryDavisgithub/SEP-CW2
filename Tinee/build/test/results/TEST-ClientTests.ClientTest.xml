@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="0" hostname="DESKTOP-4RJH7UB" name="ClientTest" skipped="0" tests="3" time="2.149" timestamp="2021-05-04T15:08:31">
+<testsuite errors="0" failures="0" hostname="DESKTOP-4RJH7UB" name="ClientTests.ClientTest" skipped="0" tests="4" time="0.131" timestamp="2021-05-04T23:10:54">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="javac.test.classpath" value=":build/classes:C:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="harry" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ClientTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\harry\Desktop\SEP\CW2\Tinee\build\test\results\TEST-ClientTest.xml crashfile=C:\Users\harry\Desktop\SEP\CW2\Tinee\build\junitvmwatcher418460141591648081.properties propsfile=C:\Users\harry\Desktop\SEP\CW2\Tinee\build\junit5850207834589345720.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ClientTests.ClientTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\harry\Desktop\SEP\CW2\Tinee\build\test\results\TEST-ClientTests.ClientTest.xml crashfile=C:\Users\harry\Desktop\SEP\CW2\Tinee\build\junitvmwatcher2410209003170445026.properties propsfile=C:\Users\harry\Desktop\SEP\CW2\Tinee\build\junit2265187713123445268.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -188,6 +188,7 @@
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/CW2.jar" />
     <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="CW2" />
     <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA0d6568f8c-ceb8-454d-8f37-1d3a4cfdb2cf_c90fb9e6-2659-4fca-a332-072f3b00cdb4" />
@@ -292,7 +293,7 @@
     <property name="libs.CopyLibs.classpath" value="C:\Program Files\NetBeans 8.2\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
     <property name="libs.hamcrest.src" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\harry\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=clientPackage.*:edu.*:resources.*:sep.*:edu.umd.*:edu.umd.cs.*:edu.umd.cs.findbugs.*:edu.umd.cs.findbugs.annotations.*:sep.mvc.*:sep.tinee.*:sep.tinee.net.*:sep.tinee.server.*:sep.tinee.net.channel.*:sep.tinee.net.message.*,destfile=&quot;C:\Users\harry\Desktop\SEP\CW2\Tinee\jacoco.exec-22686388280000&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\harry\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=clientPackage.*:edu.*:resources.*:sep.*:edu.umd.*:edu.umd.cs.*:edu.umd.cs.findbugs.*:edu.umd.cs.findbugs.annotations.*:sep.mvc.*:sep.tinee.*:sep.tinee.net.*:sep.tinee.server.*:sep.tinee.net.channel.*:sep.tinee.net.message.*,destfile=&quot;C:\Users\harry\Desktop\SEP\CW2\Tinee\jacoco.exec-51627770442300&quot;" />
     <property name="libs.hibernate4-persistence.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="dist.archive.excludes" value="" />
@@ -302,8 +303,8 @@
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="clientPackage.Client" />
-    <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
+    <property name="libs.CopyLibs.src" value="" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
@@ -312,46 +313,10 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="ClientTest" name="testLineSpaces" time="0.064" />
-  <testcase classname="ClientTest" name="testDrafting" time="2.043">
-    <error message="java.net.ConnectException: Connection refused: connect" type="java.lang.RuntimeException">java.lang.RuntimeException: java.net.ConnectException: Connection refused: connect
-	at clientPackage.Client.run(Client.java:137)
-	at clientPackage.Client.main(Client.java:100)
-	at ClientTest.testDrafting(ClientTest.java:83)
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
-	at java.net.Socket.connect(Socket.java:606)
-	at java.net.Socket.connect(Socket.java:555)
-	at java.net.Socket.&lt;init&gt;(Socket.java:451)
-	at java.net.Socket.&lt;init&gt;(Socket.java:228)
-	at sep.tinee.net.channel.ClientChannel.open(ClientChannel.java:83)
-	at sep.tinee.net.channel.ClientChannel.send(ClientChannel.java:100)
-	at clientPackage.Client.loop(Client.java:217)
-	at clientPackage.Client.run(Client.java:135)
-</error>
-  </testcase>
-  <testcase classname="ClientTest" name="testNoUser" time="0.001">
-    <error message="Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.RuntimeException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.RuntimeException&gt;
-Caused by: java.lang.RuntimeException: java.io.IOException: Input stream closed while reading.
-	at clientPackage.Client.run(Client.java:137)
-	at clientPackage.Client.main(Client.java:100)
-	at ClientTest.testNoUser(ClientTest.java:94)
-Caused by: java.io.IOException: Input stream closed while reading.
-	at clientPackage.Client.loop(Client.java:173)
-	at clientPackage.Client.run(Client.java:135)
-</error>
-  </testcase>
-  <system-out><![CDATA[
-Hello    !
-Note:  Commands can be abbreviated to any prefix,  "e.g., read [mytag] => re [mytag]
-
-[Main] Enter command: read [mytag], manage [mytag], exit
- ]]></system-out>
+  <testcase classname="ClientTests.ClientTest" name="testRead" time="0.084" />
+  <testcase classname="ClientTests.ClientTest" name="testLineSpaces" time="0.001" />
+  <testcase classname="ClientTests.ClientTest" name="testDrafting" time="0.005" />
+  <testcase classname="ClientTests.ClientTest" name="testNoUser" time="0.0" />
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -48,17 +48,17 @@ public class CLFormatter {
 
   static String formatRead(String tag, List&lt;String&gt; users,
       List&lt;String&gt; read) {
-<span class="nc" id="L51">    StringBuilder b = new StringBuilder(&quot;Read: #&quot;);</span>
-<span class="nc" id="L52">    b.append(tag);</span>
-<span class="nc" id="L53">    Iterator&lt;String&gt; it = read.iterator();</span>
-<span class="nc bnc" id="L54" title="All 2 branches missed.">    for (String user : users) {</span>
+<span class="fc" id="L51">    StringBuilder b = new StringBuilder(&quot;Read: #&quot;);</span>
+<span class="fc" id="L52">    b.append(tag);</span>
+<span class="fc" id="L53">    Iterator&lt;String&gt; it = read.iterator();</span>
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">    for (String user : users) {</span>
 <span class="nc" id="L55">      b.append(&quot;\n&quot;);</span>
 <span class="nc" id="L56">      b.append(String.format(&quot;%12s&quot;, user));</span>
 <span class="nc" id="L57">      b.append(&quot;  &quot;);</span>
 <span class="nc" id="L58">      b.append(it.next());</span>
 <span class="nc" id="L59">    };</span>
-<span class="nc" id="L60">    b.append(&quot;\n&quot;);</span>
-<span class="nc" id="L61">    return b.toString();</span>
+<span class="fc" id="L60">    b.append(&quot;\n&quot;);</span>
+<span class="fc" id="L61">    return b.toString();</span>
   }
   
   
