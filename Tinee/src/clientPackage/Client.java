@@ -25,7 +25,7 @@ import sep.tinee.net.message.ReadRequest;
  * {@link sep.tinee.server.Server}, is working. Try it out!
  * <p>
  * The arguments required to run a client correspond to the
- * {@link #set(String, String, int)} method: a user name, and the host name
+ * { #set(String, String, int)} method: a user name, and the host name
  * and port number of a Tinee server.
  * <p>
  * You can compile and run this client using <b>NetBeans</b>; e.g., right-click
