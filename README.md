@@ -10,6 +10,8 @@ languages
 - Determining test code coverage (Using JaCoCo)
 - Static code analysis (Using FindBugs and EasyPMD) - Used to improve the quality of code and fix possible future issues.
 
+All the code I added or modified was done in Java.
+
 # Application introduction
 Welcome to Tinee, a simple text-based Ticket System! It allows users to create tickets to log various issues.
 
